@@ -7,12 +7,12 @@ import org.junit.Test;
 
 public class MoodTest {
 	@Test
-	public void getmoodByPassingMsg() {
-		MoodAnaylizer mood = new MoodAnaylizer();
-		Assert.assertNotEquals("SAD", mood.getMood("I am in any mood"));
+	public void getmoodByConstructor() {
+		String mood = MoodAnaylizer.MoodAnaylizer();
+		System.out.println(mood);
+		Assert.assertEquals("SAD", mood);
 		
 		
 	}
-
 
 }

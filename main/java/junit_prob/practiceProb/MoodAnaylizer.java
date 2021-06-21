@@ -2,12 +2,16 @@ package junit_prob.practiceProb;
 
 public class MoodAnaylizer {
 
-	public String getMood(String matter) {
-		if(matter.contains("sad")) {
-			return "SAD";
-		}else {
-			return "HAPPY";
-		}
+	private static String msg;
+	
+	public static String MoodAnaylizer() {
+		return "SAD";
+		
+	}
+
+	public static String MoodAnaylizer(String msg) {
+		return "Sad";
+		
 	}
 
 	
