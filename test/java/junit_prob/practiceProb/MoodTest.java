@@ -10,7 +10,7 @@ public class MoodTest {
 	public void getmoodByConstructor() {
 		String mood = MoodAnaylizer.MoodAnaylizer();
 		System.out.println(mood);
-		Assert.assertEquals("SAD", mood);
+		Assert.assertNotEquals("SAD", mood);
 		
 		
 	}
