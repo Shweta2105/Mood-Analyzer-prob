@@ -31,7 +31,7 @@ public class MoodAnaylizer {
 			}
 			
 		}catch(NullPointerException e) {
-			throw new MoodAnalyserException(Code.INVALID, "Empty mood		Please enter a mood");
+			throw new MoodAnalyserException(Code.INVALID, "Empty mood.... Please enter a mood");
 		}
 		
 		return null;
