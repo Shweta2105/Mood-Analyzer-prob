@@ -12,54 +12,16 @@ import junit_prob.practiceProb.MoodAnaylizer;
 
 public class MoodTest {
 	@Test
-	public void getmoodByConstructorShouldReturn_SAD() throws Exception {
-		MoodAnaylizer anaylseMood = new MoodAnaylizer("I am in Sad mood");
-		String mood;
-		try {
-			mood = anaylseMood.analyseMood();
-			assertEquals("SAD",mood);
-		}catch(Exception e) {
-			System.out.println(e);
-		}
-		
+	public void getmoodByConstructorShouldReturn_SAD() {
+		 MoodAnaylizer moodAnalyser = new MoodAnaylizer(null);
+	        try {
+	            moodAnalyser.analyseMood();
+	        }catch (MoodAnalyserException e) {
+	            Assert.assertNotEquals(MoodAnalyserException.Code.NULL, e.code);
+	        }
 		
 	}
 	
-	@Test
-	public void getmoodByConstructorShouldReturn_HAPPY() throws MoodAnalyserException {
-		MoodAnaylizer anaylseMood = new MoodAnaylizer("I am in Happy mood");
-		String mood;
-		try {
-			mood = anaylseMood.analyseMood();
-			assertEquals("HAPPY",mood);
-		}catch(Exception e) {
-			System.out.println(e);
-		}
-	}
+	
 		
-		@Test
-		public void getmoodByConstructorShouldReturn_Empty() throws MoodAnalyserException {
-			MoodAnaylizer anaylseMood = new MoodAnaylizer("");
-			String mood;
-			try {
-				mood = anaylseMood.analyseMood();
-				assertEquals("Empty",mood);
-			}catch(Exception e) {
-				System.out.println(e);
-			}
-			
-	}
-		@Test
-		public void getmoodByConstructorShouldReturn_NULL() throws MoodAnalyserException {
-			MoodAnaylizer anaylseMood = new MoodAnaylizer(null);
-			String mood;
-			try {
-				mood = anaylseMood.analyseMood();
-				assertEquals("null",mood);
-			}catch(Exception e) {
-				System.out.println(e);
-			}
-			
-		}
-
 }

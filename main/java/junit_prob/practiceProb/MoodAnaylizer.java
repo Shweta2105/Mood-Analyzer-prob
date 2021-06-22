@@ -1,43 +1,33 @@
 package junit_prob.practiceProb;
 
+import java.util.*;
+
 import junit_prob.practiceProb.MoodAnalyserException.Code;
 
 public class MoodAnaylizer {
-	public static String msg;
 	
-	public MoodAnaylizer() {
-	
-	}
+	 private String message;
 
-	public MoodAnaylizer(String msg) throws MoodAnalyserException {
-		super();
-		this.msg = msg;
-		
-	}
-	
-	public String analyseMood() throws Exception {
-		try {
-			if(msg == null)
-				throw new MoodAnalyserException(Code.NULL, "Null Mood");
-			else if(msg.trim().isEmpty())
-				throw new MoodAnalyserException(Code.EMPTY, "Empty Mood");
-			else if(msg.toLowerCase().contains("sad")) {
-				System.out.println("SAD");
-				return "SAD";
-			}
-			else if(msg.toLowerCase().contains("happy")) {
-				System.out.println("HAPPY");
-				return "HAPPY";
-			}
-			
-		}catch(NullPointerException e) {
-			throw new MoodAnalyserException(Code.INVALID, "Empty mood.... Please enter a mood");
-		}
-		
-		return null;
-		
-	}
+	    //Parameterized Constructor
+	    public MoodAnaylizer(String message) {
+	        this.message = message;
+	    }
 
+	    public String analyseMood(String message) throws MoodAnalyserException {
+	        this.message = message;
+	        return analyseMood();
+	    }
+
+	    public String analyseMood() throws MoodAnalyserException {
+	        try {
+	            if (message.contains("SAD"))
+	                return "SAD";
+	            else
+	                return "HAPPY";
+	        } catch (NullPointerException e) {
+	            throw new MoodAnalyserException(Code.INVALID,"Please Enter a Proper Message");
+	        }
+	    }
+	}
 	
 
-}
